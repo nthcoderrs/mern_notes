@@ -9,6 +9,12 @@ const AddEditNotes = ({noteData,type, onClose}) => {
   const [tags, setTags] = useState([]);
   const [error, setError] = useState(null);
 
+  //Add Note
+  const addNewNote = async ()=> {};
+
+  //edit Note
+  const editNote = async ()=> {};
+
   const handleAddNote = () => {
     if(!title) {
       setError("Please enter the title");
@@ -21,6 +27,12 @@ const AddEditNotes = ({noteData,type, onClose}) => {
     }
 
     setError("");
+
+    if(type == "edit") {
+      editNote();
+    }else{
+      addNewNote();
+    }
   }
 
   return (
@@ -63,6 +75,5 @@ const AddEditNotes = ({noteData,type, onClose}) => {
     </div>
   )
 }
-
 export default AddEditNotes
 
